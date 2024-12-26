@@ -15,7 +15,7 @@
               },
               "help": {
                 "text": "In FasterXML jackson-databind before 2.13.4, resource exhaustion can occur because of a lack of a check in BeanDeserializer._deserializeFromArray to prevent use of deeply nested arrays. An application is vulnerable only with certain customized choices for deserialization.",
-                "markdown": "| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 7.5      | `com.fasterxml.jackson.core:jackson-databind 2.10.5`       | [2.12.7.1], [2.13.4]   |\n\n![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)"
+                "markdown": "![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)\n| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 7.5      | `com.fasterxml.jackson.core:jackson-databind 2.10.5`       | [2.12.7.1], [2.13.4]   |"
               },
               "properties": {
                 "security-severity": "7.5"
@@ -28,7 +28,7 @@
               },
               "help": {
                 "text": "jackson-databind before 2.13.0 allows a Java StackOverflow exception and denial of service via a large depth of nested objects.",
-                "markdown": "| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 7.5      | `com.fasterxml.jackson.core:jackson-databind 2.10.5`       | [2.12.6.1], [2.13.2.1]   |\n\n![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)"
+                "markdown": "![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)\n| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 7.5      | `com.fasterxml.jackson.core:jackson-databind 2.10.5`       | [2.12.6.1], [2.13.2.1]   |"
               },
               "properties": {
                 "security-severity": "7.5"
@@ -41,7 +41,7 @@
               },
               "help": {
                 "text": "XStream is a simple library to serialize objects to XML and back again. In affected versions this vulnerability may allow a remote attacker to load and execute arbitrary code from a remote host only by manipulating the processed input stream. No user is affected, who followed the recommendation to setup XStream's security framework with a whitelist limited to the minimal required types. XStream 1.4.18 uses no longer a blacklist by default, since it cannot be secured for general purpose.",
-                "markdown": "| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 8.5      | `com.thoughtworks.xstream:xstream 1.4.11.1`       | [1.4.18]   |\n\n![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)"
+                "markdown": "![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)\n| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 8.5      | `com.thoughtworks.xstream:xstream 1.4.11.1`       | [1.4.18]   |"
               },
               "properties": {
                 "security-severity": "8.5"
@@ -54,7 +54,7 @@
               },
               "help": {
                 "text": "XStream before version 1.4.14 is vulnerable to Remote Code Execution.The vulnerability may allow a remote attacker to run arbitrary shell commands only by manipulating the processed input stream. Only users who rely on blocklists are affected. Anyone using XStream's Security Framework allowlist is not affected. The linked advisory provides code workarounds for users who cannot upgrade. The issue is fixed in version 1.4.14.",
-                "markdown": "| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 8.8      | `com.thoughtworks.xstream:xstream 1.4.11.1`       | [1.4.14-jdk7]   |\n\n![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)"
+                "markdown": "![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)\n| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 8.8      | `com.thoughtworks.xstream:xstream 1.4.11.1`       | [1.4.14-jdk7]   |"
               },
               "properties": {
                 "security-severity": "8.8"
