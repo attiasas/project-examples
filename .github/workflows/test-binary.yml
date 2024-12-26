@@ -35,6 +35,10 @@ jobs:
         run: |
           jf scan ./binaries/* --format=sarif > scan.sarif
 
+      - name: echo results
+        run: |
+          cat scan.sarif
+
       - name: publish build info
         if : always()
         run: |
@@ -48,6 +52,6 @@ jobs:
            jf build-scan --vuln --fail=false
 
       - name: Upload SARIF results to GitHub
-        uses: github/codeql-action/upload-sarif@v1
+        uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: scan.sarif
