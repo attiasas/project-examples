@@ -27,29 +27,29 @@ jobs:
           JFROG_CLI_LOG_LEVEL: DEBUG
           JF_PROJECT: jobsummary
       
-      - name: Upload binary
-        run: |
-          jf rt u ./binaries/* binary-test/
+      # - name: Upload binary
+      #   run: |
+      #     jf rt u ./binaries/* binary-test/
 
-      - name: Run scan
-        run: |
-          jf scan ./binaries/* --vuln --format=sarif > scan.sarif
+      # - name: Run scan
+      #   run: |
+      #     jf scan ./binaries/* --vuln --format=sarif > scan.sarif
 
-      - name: echo results
-        run: |
-          cat scan.sarif
+      # - name: echo results
+      #   run: |
+      #     cat scan.sarif
 
-      - name: publish build info
-        if : always()
-        run: |
-          jf rt build-collect-env
-          jf rt build-add-git
-          jf rt build-publish
+      # - name: publish build info
+      #   if : always()
+      #   run: |
+      #     jf rt build-collect-env
+      #     jf rt build-add-git
+      #     jf rt build-publish
 
-      - name: build scan
-        if : always()
-        run: |
-           jf build-scan --vuln --fail=false
+      # - name: build scan
+      #   if : always()
+      #   run: |
+      #      jf build-scan --vuln --fail=false
 
       - name: Upload SARIF results to GitHub
         uses: github/codeql-action/upload-sarif@v2
