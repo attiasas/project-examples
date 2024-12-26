@@ -1,4 +1,4 @@
-name: "teast binary scan"
+name: "teast"
 
 on:
   [push, workflow_dispatch]
