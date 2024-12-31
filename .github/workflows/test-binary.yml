@@ -35,9 +35,9 @@ jobs:
         run: |
           jf scan ./binaries/* --vuln
 
-      - name: echo results
-        run: |
-          cat scan.sarif
+      # - name: echo results
+      #   run: |
+      #     cat scan.sarif
 
       - name: publish build info
         if : always()
