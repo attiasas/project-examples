@@ -9,6 +9,9 @@ permissions:
   # Required for uploading code scanning.
   security-events: write
 
+env:
+  JFROG_CLI_LOG_LEVEL: DEBUG
+
 jobs:
   test-binary-scan:
     runs-on: ubuntu-latest
@@ -24,7 +27,6 @@ jobs:
           JF_URL: https://${{ vars.JF_URL }}/
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JFROG_CLI_LOG_LEVEL: DEBUG
           JF_PROJECT: jobsummary
       
       - name: Upload binary
@@ -33,11 +35,11 @@ jobs:
 
       - name: Run scan
         run: |
-          jf scan ./binaries/* --vuln
+          jf scan ./binaries/* --vuln --format=sarif > scan.sarif
 
-      # - name: echo results
-      #   run: |
-      #     cat scan.sarif
+      - name: echo results
+        run: |
+          cat scan.sarif
 
       - name: publish build info
         if : always()
@@ -51,7 +53,8 @@ jobs:
         run: |
            jf build-scan --vuln --fail=false
 
-      # - name: Upload SARIF results to GitHub
-      #   uses: github/codeql-action/upload-sarif@v3
-      #   with:
-      #     sarif_file: ./sarif/test.sarif
+      - name: Upload SARIF results to GitHub
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ./scan.sarif
+          # sarif_file: ./sarif/test.sarif
