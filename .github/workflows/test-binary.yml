@@ -27,7 +27,6 @@ jobs:
           JF_URL: https://${{ vars.JF_URL }}/
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          JF_PROJECT: jobsummary
       
       - name: Upload binary
         run: |
@@ -35,7 +34,7 @@ jobs:
 
       - name: Run scan
         run: |
-          jf scan ./binaries/* --vuln --format=sarif > scan.sarif
+          jf scan ./binaries/* --vuln --watches=Security_watch_1 --format=sarif > scan.sarif
 
       - name: echo results
         run: |
