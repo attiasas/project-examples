@@ -9,26 +9,26 @@
           "name": "JFrog Xray Scanner Test",
           "rules": [
             {
-              "id": "before-test",
+              "id": "final-test",
               "shortDescription": {
-                "text": "BEFORE - Test"
+                "text": "Final"
               },
               "help": {
                 "text": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.\n\nEven though the security vulnerability is fixed in version 32.0.0, we recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.",
-                "markdown": "| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 7.1      | `com.google.guava:guava 27.0.1-jre`       | [32.0.0-android], [32.0.1-jre]   |/n/n![](https://trial0bkvej.jfrog.info/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)"
+                "markdown": "![](https://triale8a3lc.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)\n| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 7.1      | `com.google.guava:guava 27.0.1-jre`       | [32.0.0-android], [32.0.1-jre]   |"
               },
               "properties": {
                 "security-severity": "7.1"
               }
             },
             {
-              "id": "after-test",
+              "id": "final-2-test",
               "shortDescription": {
-                "text": "AFTER-test"
+                "text": "Final 2"
               },
               "help": {
                 "text": "A temp directory creation vulnerability exists in all versions of Guava, allowing an attacker with access to the machine to potentially access data in a temporary directory created by the Guava API com.google.common.io.Files.createTempDir(). By default, on unix-like systems, the created directory is world-readable (readable by an attacker with access to the system). The method in question has been marked @Deprecated in versions 30.0 and later and should not be used. For Android developers, we recommend choosing a temporary directory API provided by Android, such as context.getCacheDir(). For other Java developers, we recommend migrating to the Java 7 API java.nio.file.Files.createTempDirectory() which explicitly configures permissions of 700, or configuring the Java runtime's java.io.tmpdir system property to point to a location whose permissions are appropriately configured.",
-                "markdown": "![](https://tokyoshiftleft.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)\n| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 3.3      | `com.google.guava:guava 27.0.1-jre`       | [32.0.0-android]   |"
+                "markdown": "![](https://triale8a3lc.jfrog.io/ui/api/v1/u?s=1&m=2&job_id=teast&run_id=12504538887&git_repo=attiasas/project-examples&type=sca)\n| Severity Score | Direct Dependencies | Fixed Versions     |\n| :---:        |    :----:   |          :---: |\n| 3.3      | `com.google.guava:guava 27.0.1-jre`       | [32.0.0-android]   |"
               },
               "properties": {
                 "security-severity": "3.3"
@@ -51,11 +51,11 @@
           "properties": {
             "fixedVersion": "[32.0.0-android], [32.0.1-jre]"
           },
-          "ruleId": "before-test",
+          "ruleId": "final-test",
           "ruleIndex": 34,
           "level": "note",
           "message": {
-            "text": "BEFORE - Test",
+            "text": "Final",
             "markdown": "[CVE-2023-2976] com.google.guava:guava 27.0.1-jre\nGithub Actions Workflow: .github/workflows/test-binary.yml\nRun: 6"
           },
           "locations": [
@@ -75,11 +75,11 @@
           "properties": {
             "fixedVersion": "[32.0.0-android]"
           },
-          "ruleId": "after-test",
+          "ruleId": "final-2-test",
           "ruleIndex": 46,
           "level": "note",
           "message": {
-            "text": "AFTER-test",
+            "text": "Final 2",
             "markdown": "[CVE-2020-8908] com.google.guava:guava 27.0.1-jre\nGithub Actions Workflow: .github/workflows/test-binary.yml\nRun: 6"
           },
           "locations": [
