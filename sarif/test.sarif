@@ -9,9 +9,9 @@
           "name": "JFrog Xray Scanner Test",
           "rules": [
             {
-              "id": "CVE-2023-2976_com.google.guava:guava_27.0.1-jre",
+              "id": "CVE-2023-2976_com.google.guava:guava_27.0.1-jre-testy",
               "shortDescription": {
-                "text": "[CVE-2023-2976] com.google.guava:guava 27.0.1-jre"
+                "text": "[CVE-2023-2976] [testy] com.google.guava:guava 27.0.1-jre"
               },
               "help": {
                 "text": "Use of Java's default temporary directory for file creation in `FileBackedOutputStream` in Google Guava versions 1.0 to 31.1 on Unix systems and Android Ice Cream Sandwich allows other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class.\n\nEven though the security vulnerability is fixed in version 32.0.0, we recommend using version 32.0.1 as version 32.0.0 breaks some functionality under Windows.",
@@ -51,11 +51,11 @@
           "properties": {
             "fixedVersion": "[32.0.0-android], [32.0.1-jre]"
           },
-          "ruleId": "CVE-2023-2976_com.google.guava:guava_27.0.1-jre",
+          "ruleId": "CVE-2023-2976_com.google.guava:guava_27.0.1-jre-testy",
           "ruleIndex": 34,
           "level": "note",
           "message": {
-            "text": "[CVE-2023-2976] com.google.guava:guava 27.0.1-jre",
+            "text": "[CVE-2023-2976] (testy) com.google.guava:guava 27.0.1-jre",
             "markdown": "[CVE-2023-2976] com.google.guava:guava 27.0.1-jre\nGithub Actions Workflow: .github/workflows/test-binary.yml\nRun: 6"
           },
           "locations": [
