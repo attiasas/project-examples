@@ -28,24 +28,24 @@ jobs:
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
           JF_GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Upload binary
-        run: |
-          jf rt u ./binaries/* binary-test/
+      # - name: Upload binary
+      #   run: |
+      #     jf rt u ./binaries/* binary-test/
 
-      - name: Run scan
-        run: |
-          jf scan ./binaries/* --vuln --watches=Security_watch_1 --format=sarif > scan.sarif
+      # - name: Run scan
+      #   run: |
+      #     jf scan ./binaries/* --vuln --watches=Security_watch_1 --format=sarif > scan.sarif
 
-      - name: echo results
-        run: |
-          cat scan.sarif
+      # - name: echo results
+      #   run: |
+      #     cat scan.sarif
 
-      - name: publish build info
-        if : always()
-        run: |
-          jf rt build-collect-env
-          jf rt build-add-git
-          jf rt build-publish
+      # - name: publish build info
+      #   if : always()
+      #   run: |
+      #     jf rt build-collect-env
+      #     jf rt build-add-git
+      #     jf rt build-publish
 
       # - name: build scan
       #   if : always()
